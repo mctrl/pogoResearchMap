@@ -8,7 +8,8 @@
       var map = new google.maps.Map(document.getElementById('map-canvas'), {
         center: defaultCenter,
         zoom: defaultZoom,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        gestureHandling: 'greedy'
       });
 
       var layer = new google.maps.FusionTablesLayer({
