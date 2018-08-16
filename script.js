@@ -9,6 +9,7 @@
         center: defaultCenter,
         zoom: defaultZoom,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
+        gestureHandling: 'none'
       });
 
       var layer = new google.maps.FusionTablesLayer({
