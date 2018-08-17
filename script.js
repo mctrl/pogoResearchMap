@@ -1,11 +1,13 @@
-    function initialize() {
+     var map = null ;
+
+function initialize() {
       var defaultCenter = new google.maps.LatLng(52.914669, -1.5400069);
       var defaultZoom = 13;
       var tableId = '1_s6-uXU08BcUETuUwdg7DTBfvXc6CDHFeqNnqlXR';
       var locationColumn = 'location';
       var geocoder = new google.maps.Geocoder();
 
-      var map = new google.maps.Map(document.getElementById('map-canvas'), {
+      map = new google.maps.Map(document.getElementById('map-canvas'), {
         center: defaultCenter,
         zoom: defaultZoom,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
