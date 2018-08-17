@@ -34,12 +34,23 @@
 
       // Send the JSONP request using jQuery
       var dataElement = document.createElement('select');
+      var taskSubmit = document.getElementById("Research Task")
+      
       dataElement.style = "display:block; margin:auto; width:100%"
       dataElement.id = "taskList";
+      
       var starter = document.createElement('option')
+      var taskSubmitInner = document.createElement('option')
+      
       starter.innerHTML = "All Tasks"
       starter.value = "All";
+      
+      taskSubmitInner.innerHTML = "All Tasks"
+      taskSubmitInner.value = "All";
+      
       dataElement.appendChild(starter);
+      taskSubmit.appendChild(taskSubmitInner);
+      
       $.ajax({
         url: url.join(''),
         dataType: 'jsonp',
@@ -51,15 +62,19 @@
             var address = rows[i][1];
 
             var storeElement = document.createElement('option');
+            var TaskSubmitInner = document.createElement('option');
             storeElement.innerHTML = store;
-
             storeElement.value = store;
-            storeElement.className = 'TaskName';
+            
+            TaskSubmitInner.innerHTML = store;
+            TaskSubmitInner.value = store;
 
             dataElement.appendChild(storeElement);
-
+              
 
             ftData.appendChild(dataElement);
+            
+            taskSubmit.appendChild(TaskSubmitInner);
           }
         }
       });
