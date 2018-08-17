@@ -9,7 +9,10 @@
         center: defaultCenter,
         zoom: defaultZoom,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
-        gestureHandling: 'greedy'
+        gestureHandling: 'greedy',
+        streetViewControl: false,
+        fullscreenControl: false,
+         zoomControl: false,
       });
 
       var layer = new google.maps.FusionTablesLayer({
@@ -45,7 +48,7 @@
       starter.innerHTML = "All Tasks"
       starter.value = "All";
       
-      taskSubmitInner.innerHTML = "All Tasks"
+      taskSubmitInner.innerHTML = "None Selected"
       taskSubmitInner.value = "All";
       
       dataElement.appendChild(starter);

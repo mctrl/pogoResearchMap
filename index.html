@@ -20,12 +20,20 @@
     .TaskSubmitter { padding:20px; background:#fff; z-index:9999;
       position:fixed;
         bottom:0;
-      right:20px;
+      right:0;
       display:none
     
     }
     
-    .hideshow {position:fixed; top:20px; right:20px; z-index:9999}
+    #food {
+      width:100%;
+      
+    }
+    
+    #foo select {width:100%;}
+    #foo input {width:100%;}
+    
+    .hideshow {position:fixed; top:60px; right:0; z-index:9999}
       
   
   </style>
@@ -35,7 +43,7 @@
 
 <body style="padding:0; margin:0;">
   <button class="hideshow">
-    Hide / Show Submit Box
+    Hide / Show Research Submission
   </button>
  <div class="TaskSubmitter">
          <button onclick="getLocation()">Get Current Location</button>
