@@ -13,10 +13,10 @@ function showPosition(position) {
   var marker = null;
   var location = document.getElementById("location");
   var thePosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  
+
   location.value = position.coords.latitude + "," + position.coords.longitude;
-  
-  
+
+
   marker = new google.maps.Marker({
     position: thePosition,
     map: map,
@@ -27,14 +27,14 @@ function showPosition(position) {
   });
   map.setCenter(thePosition);
   map.setZoom(17);
-  
-  google.maps.event.addListener(marker, 'dragend', function(evt){
-   location.value =evt.latLng.lat().toFixed(5) + "," + evt.latLng.lng().toFixed(5);
-});
 
-google.maps.event.addListener(marker, 'dragstart', function(evt){
+  google.maps.event.addListener(marker, 'dragend', function(evt) {
+    location.value = evt.latLng.lat().toFixed(5) + "," + evt.latLng.lng().toFixed(5);
+  });
+
+  google.maps.event.addListener(marker, 'dragstart', function(evt) {
     location.value = 'Currently dragging marker';
-});
+  });
 
 }
 
