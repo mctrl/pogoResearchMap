@@ -17,12 +17,44 @@
 
   <style>
     body {font-family: Arial, Helvetica, sans-serif; overflow:hidden}
-    .TaskSubmitter { padding:20px; background:#fff; z-index:9999;
+    .TaskSubmitter { 
+      
+      padding:20px; background:#1c8796; z-index:9999;
       position:fixed;
         bottom:0;
       right:0;
-      display:none
+      display:none;
+      color:#b3ffac;
+        
+        -webkit-border-top-left-radius: 10px;
+-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
     
+    }
+    
+    #ft-data {
+      position:fixed; padding:10px; background:#1c8796; top:0;
+-webkit-border-bottom-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+    }
+    
+    #theSearch {
+      position:fixed; bottom:0; padding:10px; background:#1c8796;
+
+      
+              -webkit-border-top-left-radius: 10px;
+-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-topright: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
     }
     
     #food {
@@ -33,7 +65,14 @@
     #foo select {width:100%;}
     #foo input {width:100%;}
     
-    .hideshow {position:fixed; top:60px; right:0; z-index:9999}
+    .hideshow {position:fixed; top:60px; right:20px; z-index:9999;
+      background:url("img/submit.png");
+      background-repeat:no-repeat;
+            height:50px;
+      width:50px;
+    
+    
+    }
       
   
   </style>
@@ -42,9 +81,9 @@
 </head>
 
 <body style="padding:0; margin:0;">
-  <button class="hideshow">
-    Hide / Show Research Submission
-  </button>
+  <div class="hideshow">
+   
+  </div>
  <div class="TaskSubmitter">
          <button onclick="getLocation()">Get Current Location</button>
     <form id='foo'>
@@ -65,14 +104,14 @@
   
   <div id="map-canvas" style="width:100vw; height:100vh; display:block; margin: auto; border:1px solid grey"></div>
 
-  <div style="position:fixed; bottom:0; padding:10px; background:#666; ">
+  <div id="theSearch" >
 
     <input type="text" id="address" value="Derby, UK">
     <input type="button" id="search" value="Search!">
     <input type="button" id="reset" value="Reset">
   </div>
 
-  <div id="ft-data" style="position:fixed; top:10px; padding:10px; background:#666; "></div>
+  <div id="ft-data" ></div>
 </body>
   
   <script src='google-sheet.js'></script>
