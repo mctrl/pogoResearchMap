@@ -15,6 +15,7 @@ function initialize() {
         streetViewControl: false,
         fullscreenControl: false,
          zoomControl: false,
+        mapTypeControl: false,
       });
 
       var layer = new google.maps.FusionTablesLayer({
