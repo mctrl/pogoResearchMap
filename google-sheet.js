@@ -1,5 +1,6 @@
 // Variable to hold request
 var request;
+var gmarkers = [];
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -11,6 +12,9 @@ function getLocation() {
 
 function showPosition(position) {
   var marker = null;
+  for (i = 0; i < gmarkers.length; i++) {
+    gmarkers[i].setMap(null);
+  }
   var location = document.getElementById("location");
   var thePosition = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
@@ -23,10 +27,11 @@ function showPosition(position) {
     draggable: true,
     animation: google.maps.Animation.DROP,
     title: 'Your location',
-    icon: 'icons/darkgreen_MarkerA.png'
+         icon: '/icons/darkgreen_MarkerA.png'
   });
   map.setCenter(thePosition);
   map.setZoom(17);
+  gmarkers.push(marker);
 
   google.maps.event.addListener(marker, 'dragend', function(evt) {
     location.value = evt.latLng.lat().toFixed(5) + "," + evt.latLng.lng().toFixed(5);
