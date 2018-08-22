@@ -27,7 +27,7 @@ function showPosition(position) {
     draggable: true,
     animation: google.maps.Animation.DROP,
     title: 'Your location',
-         icon: '/icons/darkgreen_MarkerA.png'
+         icon: 'icons/darkgreen_MarkerA.png'
   });
   map.setCenter(thePosition);
   map.setZoom(17);
