@@ -91,10 +91,9 @@ $("#foo").submit(function(event) {
   // Callback handler that will be called on success
   request.done(function(response, textStatus, jqXHR) {
     // Log a message to the console
-    alert("Research Task Posted");
-    console.log(response);
-    console.log(textStatus);
-    console.log(jqXHR);
+//     alert("Research Task Posted");
+    $.notify("Research Task Submitted for Approval","success");
+
   });
 
   // Callback handler that will be called on failure
