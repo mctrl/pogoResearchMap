@@ -92,7 +92,7 @@ $("#foo").submit(function(event) {
   request.done(function(response, textStatus, jqXHR) {
     // Log a message to the console
 //     alert("Research Task Posted");
-    $.notify("Research Task Submitted for Approval","success");
+    $.notify("Research Task Submitted for Approval",{ position:"right middle", style:"bootstrap", className: 'success', });
 
   });
 
