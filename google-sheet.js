@@ -45,7 +45,17 @@ function showPosition(position) {
 
 $(".hideshow").on("click", function() {
 
-  $(".TaskSubmitter").slideToggle();
+  $(".TaskSubmitter").stop(true,true).slideToggle().toggleClass('opened');
+  
+  var isVisible = $( '.TaskSubmitter' ).is( ".opened" );
+
+    if (isVisible === true ){
+       getLocation()
+    }
+
+    else {
+             
+    }    
 })
 
 // Bind to the submit event of our form
