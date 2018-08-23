@@ -2,6 +2,18 @@
 var request;
 var gmarkers = [];
 
+function Pushbullet () {
+   PushBullet.APIKey = "o.HvSM73Nce2NTazVaVFVTMHcakiBDnZQ1";
+   var all = PushBullet.devices();
+   var device = all.devices[0].iden
+  var task = document.getElementById("Research Task");
+    
+  var theMessage = PushBullet.push("note", null, null, {title: "New Research Task", body: task.value});
+
+  
+}
+
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -27,7 +39,7 @@ function showPosition(position) {
     draggable: true,
     animation: google.maps.Animation.DROP,
     title: 'Your location',
-         icon: 'icons/darkgreen_MarkerA.png'
+    icon: 'icons/darkgreen_MarkerA.png'
   });
   map.setCenter(thePosition);
   map.setZoom(17);
@@ -45,17 +57,15 @@ function showPosition(position) {
 
 $(".hideshow").on("click", function() {
 
-  $(".TaskSubmitter").stop(true,true).slideToggle().toggleClass('opened');
-  
-  var isVisible = $( '.TaskSubmitter' ).is( ".opened" );
+  $(".TaskSubmitter").stop(true, true).slideToggle().toggleClass('opened');
 
-    if (isVisible === true ){
-       getLocation()
-    }
+  var isVisible = $('.TaskSubmitter').is(".opened");
 
-    else {
-             
-    }    
+  if (isVisible === true) {
+    getLocation()
+  } else {
+
+  }
 })
 
 // Bind to the submit event of our form
@@ -91,8 +101,15 @@ $("#foo").submit(function(event) {
   // Callback handler that will be called on success
   request.done(function(response, textStatus, jqXHR) {
     // Log a message to the console
-//     alert("Research Task Posted");
-    $.notify("Research Task Submitted for Approval",{ position:"right middle", style:"bootstrap", className: 'success', });
+    //     alert("Research Task Posted");
+    $.notify("Research Task Submitted for Approval", {
+      position: "right middle",
+      style: "bootstrap",
+      className: 'success',
+    });
+    
+    Pushbullet();
+
 
   });
 

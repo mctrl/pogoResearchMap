@@ -1,7 +1,11 @@
      var map = null;
+    
+
+
 
      function initialize() {
-       var defaultCenter = new google.maps.LatLng(52.92219,-1.47751);
+      
+       var defaultCenter = new google.maps.LatLng(52.92219, -1.47751);
        var defaultZoom = 13;
        var tableId = '1_s6-uXU08BcUETuUwdg7DTBfvXc6CDHFeqNnqlXR';
        var locationColumn = 'location';
