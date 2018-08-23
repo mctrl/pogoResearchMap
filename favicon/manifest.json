@@ -1,5 +1,10 @@
 {
  "name": "Pokémon Go Research Map",
+  "short_name": "Pogo Research Map",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A tool to submit Research maps",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
