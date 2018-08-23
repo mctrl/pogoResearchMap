@@ -1,7 +1,7 @@
 {
  "name": "Pokémon Go Research Map",
   "short_name": "Pogo Research Map",
-  "start_url": ".",
+  "start_url": "https://nadakbar.github.io/pogoResearchMap/",
   "display": "standalone",
   "background_color": "#fff",
   "description": "A tool to submit Research maps",
