@@ -1,0 +1,76 @@
+    $pogogreen : #1c8796;
+
+body {
+      font-family: Arial, Helvetica, sans-serif;
+      overflow: hidden;
+      padding:0; margin:0; 
+    }
+    
+    select,input,button {-webkit-appearance:none; background:#fff; padding:5px; border-radius:3px; border:none; }
+    #map-canvas {
+      width:100vw; height:100vh; display:block; margin: auto; border:1px solid grey;
+    }
+    
+    
+    .TaskSubmitter {
+      padding: 20px;
+      background:  $pogogreen;
+      z-index: 9999;
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      display: none;
+      color: #b3ffac;
+      -webkit-border-top-left-radius: 10px;
+      -webkit-border-top-right-radius: 10px;
+      -moz-border-radius-topleft: 10px;
+      -moz-border-radius-topright: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    #ft-data {
+      position: fixed;
+      padding: 10px;
+      background:  $pogogreen;
+      top: 0;
+      -webkit-border-bottom-right-radius: 10px;
+      -webkit-border-bottom-left-radius: 10px; 
+      -moz-border-radius-bottomright: 10px;
+      -moz-border-radius-bottomleft: 10px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    #theSearch {
+      position: fixed;
+      bottom: 0;
+      padding: 10px;
+      background:  $pogogreen;
+      -webkit-border-top-left-radius: 10px;
+      -webkit-border-top-right-radius: 10px;
+      -moz-border-radius-topleft: 10px;
+      -moz-border-radius-topright: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    #foo select {
+      width: 100%;
+    }
+
+    #foo input {
+      width: 100%;
+    }
+
+    .hideshow {
+      position: fixed;
+      top: 60px;
+      right: 0;
+      z-index: 9999;
+      background: url("../img/Research_button_blue.png");
+      background-repeat: no-repeat;
+      height: 65px;
+      width: 65px;
+      
+    }
