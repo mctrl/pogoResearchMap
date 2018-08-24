@@ -69,15 +69,18 @@
            var ftData = document.getElementById('ft-data');
            for (var i in rows) {
              var store = rows[i][0];
-             var address = rows[i][1];
+             var reward = rows[i][1];
+             console.log(reward);
 
              var storeElement = document.createElement('option');
              var TaskSubmitInner = document.createElement('option');
              storeElement.innerHTML = store;
              storeElement.value = store;
+              storeElement.setAttribute("data-reward",reward) 
 
              TaskSubmitInner.innerHTML = store;
              TaskSubmitInner.value = store;
+             TaskSubmitInner.setAttribute("data-reward",reward) 
 
              dataElement.appendChild(storeElement);
 
