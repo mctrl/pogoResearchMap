@@ -56,13 +56,19 @@ body {
       border-top-right-radius: $curve;
     }
 
-    #foo select {
+#foo {
+  overflow:hidden;
+      select {
       width: 100%;
     }
 
-    #foo input {
+    input {
       width: 100%;
     }
+  
+}
+
+
 
     .hideshow {
       position: fixed;
