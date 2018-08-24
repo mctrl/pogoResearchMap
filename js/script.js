@@ -1,8 +1,5 @@
      var map = null;
     
-
-
-
      function initialize() {
       
        var defaultCenter = new google.maps.LatLng(52.92219, -1.47751);

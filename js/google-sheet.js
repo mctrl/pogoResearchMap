@@ -70,15 +70,24 @@ $(".hideshow").on("click", function() {
 
 // Bind to the submit event of our form
 $("#foo").submit(function(event) {
-
-  // Abort any pending request
+ event.preventDefault();
+  var research_task = document.getElementById("Research Task").value;
+  if (research_task == "All"){
+    
+        $.notify("Please Choose a Task from the List", {
+      position: "right middle",
+      style: "bootstrap",
+      className: 'error',
+    });
+  }else {
+    
+      // Abort any pending request
   if (request) {
     request.abort();
   }
   // setup some local variables
   var $form = $(this);
-
-  // Let's select and cache all the fields
+      // Let's select and cache all the fields
   var $inputs = $form.find("Research Task, location");
 
 
@@ -130,5 +139,8 @@ $("#foo").submit(function(event) {
   });
 
   // Prevent default posting of form
-  event.preventDefault();
+ 
+  }
+
+
 });
