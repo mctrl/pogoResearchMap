@@ -1,21 +1,33 @@
-    $pogogreen : #1c8796;
-$curve: 5px;
-
-body {
+    $pogogreen: #1c8796;
+    $curve: 5px;
+    body {
       font-family: Arial, Helvetica, sans-serif;
       overflow: hidden;
-      padding:0; margin:0; 
+      padding: 0;
+      margin: 0;
     }
-    
-    select,input,button {-webkit-appearance:none; background:#fff; padding:5px; border-radius:3px; border:none; }
+
+    select,
+    input,
+    button {
+      -webkit-appearance: none;
+      background: #fff;
+      padding: 5px;
+      border-radius: 3px;
+      border: none;
+    }
+
     #map-canvas {
-      width:100vw; height:100vh; display:block; margin: auto; border:1px solid grey;
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      margin: auto;
+      border: 1px solid grey;
     }
-    
-    
+
     .TaskSubmitter {
       padding: 20px;
-      background:  $pogogreen;
+      background: $pogogreen;
       z-index: 9999;
       position: fixed;
       bottom: 0;
@@ -33,10 +45,10 @@ body {
     #ft-data {
       position: fixed;
       padding: 10px;
-      background:  $pogogreen;
+      background: $pogogreen;
       top: 0;
       -webkit-border-bottom-right-radius: $curve;
-      -webkit-border-bottom-left-radius: $curve; 
+      -webkit-border-bottom-left-radius: $curve;
       -moz-border-radius-bottomright: $curve;
       -moz-border-radius-bottomleft: $curve;
       border-bottom-right-radius: $curve;
@@ -47,7 +59,7 @@ body {
       position: fixed;
       bottom: 0;
       padding: 10px;
-      background:  $pogogreen;
+      background: $pogogreen;
       -webkit-border-top-left-radius: $curve;
       -webkit-border-top-right-radius: $curve;
       -moz-border-radius-topleft: $curve;
@@ -56,19 +68,15 @@ body {
       border-top-right-radius: $curve;
     }
 
-#foo {
-  overflow:hidden;
+    #foo {
+      overflow: hidden;
       select {
-      width: 100%;
+        width: 100%;
+      }
+      input {
+        width: 100%;
+      }
     }
-
-    input {
-      width: 100%;
-    }
-  
-}
-
-
 
     .hideshow {
       position: fixed;
@@ -79,5 +87,4 @@ body {
       background-repeat: no-repeat;
       height: 65px;
       width: 65px;
-      
     }
