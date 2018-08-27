@@ -1,37 +1,26 @@
-## Welcome to pogoResearchMap
 
-You can use the [editor on GitHub](https://github.com/nadakbar/pogoResearchMap/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Welcome to Pogo Research Map
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This is just a small project that was built for the small but **Strong** Pokemon go Community in the City of Derby UK
 
-### Markdown
+ - This project uses the Following Technologies
+ - Pushbullet for Notfications to myself of when a user submits a
+   Research Task
+ - Google sheets API to record submissions
+ - Google Fusion Tables that read from the Google sheet and create a
+   sort of Database Structure
+ - Google maps API + Fusion tables to form a Data Layer on the google
+   map.
+ - Utilising Geolocation to find the user location to submit stops no
+   matter where they are.
+ - Ability to Drag the location pin to post Research Tasks that may not
+   be where the user is standing.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+All of the API Keys in the project are public so please change these to your own and do not abuse them, if i start recieving a ton of traffic i will change the API keys. 
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+## Google Sheets / Fusion Tables code
 
-- Bulleted
-- List
+This code is not available within this Repo and this Readme is not intended to be a tutorial on how to set up this project on your own servers. 
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nadakbar/pogoResearchMap/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+If you wish to clone this repo please change the **Pushbullet API** key or comment out the call to the code all together. Also the **Google maps API** key will only work from domains i have permitted it too so please change this to your own also 
