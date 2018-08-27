@@ -67,7 +67,7 @@
            for (var i in rows) {
              var store = rows[i][0];
              var reward = rows[i][1];
-             console.log(reward);
+//              console.log(reward);
 
              var storeElement = document.createElement('option');
              var TaskSubmitInner = document.createElement('option');

@@ -2,15 +2,18 @@
 var request;
 var gmarkers = [];
 
-function Pushbullet () {
-   PushBullet.APIKey = "o.HvSM73Nce2NTazVaVFVTMHcakiBDnZQ1";
-   var all = PushBullet.devices();
-   var device = all.devices[0].iden
+function Pushbullet() {
+  PushBullet.APIKey = "o.HvSM73Nce2NTazVaVFVTMHcakiBDnZQ1";
+  var all = PushBullet.devices();
+  var device = all.devices[0].iden
   var task = document.getElementById("Research Task");
-    
-  var theMessage = PushBullet.push("note", null, null, {title: "New Research Task", body: task.value});
 
-  
+  var theMessage = PushBullet.push("note", null, null, {
+    title: "New Research Task",
+    body: task.value
+  });
+
+
 }
 
 
@@ -80,13 +83,13 @@ $("#foo").submit(function(event) {
       className: 'error',
     });
   } else {
-    
+
     var Research_task_selector = document.getElementById("Research Task");
-   
+
     var reward = document.getElementById("Reward");
-    reward.value =  Research_task_selector.options[Research_task_selector.selectedIndex].dataset.reward;
+    reward.value = Research_task_selector.options[Research_task_selector.selectedIndex].dataset.reward;
     console.log(reward.value);
-    
+
 
 
 
@@ -115,13 +118,13 @@ $("#foo").submit(function(event) {
       type: "post",
       data: serializedData
     });
-    
-          $.notify("Posting Task please wait...", {
-        position: "right middle",
-        style: "bootstrap",
-        className: 'success',
-        autoHideDelay: 1500
-      });
+
+    $.notify("Posting Task please wait...", {
+      position: "right middle",
+      style: "bootstrap",
+      className: 'success',
+      autoHideDelay: 1500
+    });
 
     // Callback handler that will be called on success
     request.done(function(response, textStatus, jqXHR) {
@@ -133,7 +136,7 @@ $("#foo").submit(function(event) {
         className: 'success'
       });
 
-      Pushbullet();
+            Pushbullet();
 
 
     });
