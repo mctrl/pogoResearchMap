@@ -80,6 +80,15 @@ $("#foo").submit(function(event) {
       className: 'error',
     });
   } else {
+    
+    var Research_task_selector = document.getElementById("Research Task");
+   
+    var reward = document.getElementById("Reward");
+    reward.value =  Research_task_selector.options[Research_task_selector.selectedIndex].dataset.reward;
+    console.log(reward.value);
+    
+
+
 
     // Abort any pending request
     if (request) {
@@ -88,7 +97,7 @@ $("#foo").submit(function(event) {
     // setup some local variables
     var $form = $(this);
     // Let's select and cache all the fields
-    var $inputs = $form.find("Research Task, location");
+    var $inputs = $form.find("Research Task,Reward, location");
 
 
     // Serialize the data in the form
