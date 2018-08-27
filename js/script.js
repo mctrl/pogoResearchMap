@@ -49,7 +49,7 @@
        var starter = document.createElement('option')
        var taskSubmitInner = document.createElement('option')
 
-       starter.innerHTML = "All Tasks"
+       starter.innerHTML = "Filter Visible Research Tasks"
        starter.value = "All";
 
        taskSubmitInner.innerHTML = "None Selected"
