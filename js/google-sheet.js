@@ -88,8 +88,6 @@ $("#foo").submit(function(event) {
 
     var reward = document.getElementById("Reward");
     reward.value = Research_task_selector.options[Research_task_selector.selectedIndex].dataset.reward;
-    console.log(reward.value);
-
 
 
 
