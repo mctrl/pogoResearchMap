@@ -167,6 +167,14 @@
            function() {
              updateMap(layer, tableId, locationColumn);
            });
+         
+           var researchSelector = document.getElementById("Research Task");
+
+           researchSelector.onchange = function() {
+             var reward = document.getElementById("Reward");
+             reward.value = researchSelector.options[researchSelector.selectedIndex].dataset.reward;
+           };
+         
        }, 2000)
 
      }

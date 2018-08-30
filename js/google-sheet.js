@@ -75,6 +75,7 @@ $(".hideshow").on("click", function() {
 $("#foo").submit(function(event) {
   event.preventDefault();
   var research_task = document.getElementById("Research Task").value;
+  
   if (research_task == "All") {
 
     $.notify("Please Choose a Task from the List", {
@@ -83,13 +84,7 @@ $("#foo").submit(function(event) {
       className: 'error',
     });
   } else {
-
-    var Research_task_selector = document.getElementById("Research Task");
-
-    var reward = document.getElementById("Reward");
-    reward.value = Research_task_selector.options[Research_task_selector.selectedIndex].dataset.reward;
-
-
+  
 
     // Abort any pending request
     if (request) {
@@ -133,6 +128,11 @@ $("#foo").submit(function(event) {
         style: "bootstrap",
         className: 'success'
       });
+      
+          var Research_task_selector = document.getElementById("Research Task");
+
+    var reward = document.getElementById("Reward");
+    reward.value = Research_task_selector.options[Research_task_selector.selectedIndex].dataset.reward;
 
             Pushbullet();
 

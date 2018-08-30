@@ -56,10 +56,14 @@
         <select id='Research Task' name='Research Task'></select>
       </p>
       <p>
-        <label>Location</label>
-        <input id='location' name='location' type='text' readonly>
+<!--         <label>Location</label> -->
+        <input id='location' name='location' type='hidden' readonly>
       </p>
-        <input type="hidden" id="Reward" name="Reward" value="Nothing">
+      <p>
+        <label>Reward</label>
+         <input type="text" id="Reward" name="Reward" value="Select a Task first">
+      </p>
+       
       <div id='success'></div>
       <button type='submit'>Send</button>
     </form>
