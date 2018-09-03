@@ -42,7 +42,7 @@ function showPosition(position) {
     draggable: true,
     animation: google.maps.Animation.DROP,
     title: 'Your location',
-    icon: 'icons/pin2.png'
+    icon: 'icons/pin1.png'
   });
   map.setCenter(thePosition);
   map.setZoom(17);
