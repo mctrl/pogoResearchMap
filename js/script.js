@@ -71,7 +71,7 @@
 
              var storeElement = document.createElement('option');
              var TaskSubmitInner = document.createElement('option');
-             storeElement.innerHTML = store;
+             storeElement.innerHTML = store + " : " + reward;
              storeElement.value = store;
              storeElement.setAttribute("data-reward", reward)
 
