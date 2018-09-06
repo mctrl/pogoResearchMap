@@ -93,7 +93,7 @@ $("#foo").submit(function(event) {
     // setup some local variables
     var $form = $(this);
     // Let's select and cache all the fields
-    var $inputs = $form.find("Research Task,Reward, location");
+    var $inputs = $form.find("Research Task,Reward, location,stop");
 
 
     // Serialize the data in the form

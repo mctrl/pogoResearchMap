@@ -1,5 +1,5 @@
      var map = null;
-
+      
      function initialize() {
 
        var defaultCenter = new google.maps.LatLng(52.92219, -1.47751);
@@ -167,14 +167,43 @@
            function() {
              updateMap(layer, tableId, locationColumn);
            });
-         
-           var researchSelector = document.getElementById("Research Task");
 
-           researchSelector.onchange = function() {
-             var reward = document.getElementById("Reward");
-             reward.value = researchSelector.options[researchSelector.selectedIndex].dataset.reward;
-           };
+         var researchSelector = document.getElementById("Research Task");
+
+         researchSelector.onchange = function() {
+           var reward = document.getElementById("Reward");
+           reward.value = researchSelector.options[researchSelector.selectedIndex].dataset.reward;
+         };
+
+         var items = [];
+         var input = document.getElementById("stop");
+
+         $.getJSON("https://spreadsheets.google.com/feeds/list/1wy864L-zL-iSRo48D_WbcUP1nZSrCb-3RjpqXk-hDfY/od6/public/basic?alt=json", function(data) {
+
+
+           $.each(data, function(key, val) {
+
+             $.each(val.entry, function(key2, val2) {
+
+               items.push(val2.title.$t)
+
+
+             });
+             
+             console.log(items);
+
+           });
          
+
+
+
+
+         });
+         new Awesomplete(input, {
+           list: items,
+           maxItems: 200
+         });
+
        }, 2000)
 
      }
