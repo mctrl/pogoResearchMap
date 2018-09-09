@@ -7,6 +7,7 @@
        var tableId = '1_s6-uXU08BcUETuUwdg7DTBfvXc6CDHFeqNnqlXR';
        var locationColumn = 'location';
        var geocoder = new google.maps.Geocoder();
+       var centered = 0;
 
        map = new google.maps.Map(document.getElementById('map-canvas'), {
          center: defaultCenter,
@@ -18,6 +19,48 @@
          zoomControl: false,
          mapTypeControl: false,
        });
+       
+       if (navigator.geolocation) {
+         navigator.geolocation.getCurrentPosition(function(position) {
+           var pos = {
+             lat: position.coords.latitude,
+             lng: position.coords.longitude
+           };
+           var currentPosMarker = new google.maps.Marker({
+             position: pos,
+             animation: google.maps.Animation.DROP,
+             map: map,
+             icon: "https://i.imgur.com/lvHhrEf.png"
+           });
+           if (centered === 0) {
+             map.setCenter(pos);
+
+             navigator.geolocation.watchPosition(function(position) {
+               var pos1 = {
+                 lat: position.coords.latitude,
+                 lng: position.coords.longitude
+               };
+
+               currentPosMarker.setPosition(pos1);
+
+
+
+
+             });
+
+             centered = 1;
+
+           } else {
+
+
+           }
+
+
+         });
+       } else {
+         alert('Geolocation is not supported for this Browser/OS.');
+       } 
+
 
        var layer = new google.maps.FusionTablesLayer({
          query: {
@@ -97,7 +140,7 @@
          }, function(results, status) {
            if (status == google.maps.GeocoderStatus.OK) {
              map.setCenter(results[0].geometry.location);
-             map.setZoom(10);
+             map.setZoom(13);
 
              // OPTIONAL: run spatial query to find results within bounds.
              var sw = map.getBounds().getSouthWest();
@@ -121,8 +164,7 @@
        function updateMap(layer, tableId, locationColumn) {
 
          var selectBox = document.getElementById('taskList').value;
-         console.log(locationColumn)
-         console.log(selectBox)
+
          if (selectBox != "All") {
            layer.setOptions({
              query: {
@@ -189,7 +231,6 @@
 
              });
 
-             console.log(items);
 
              $("#stop").autocomplete({
                source: items,
@@ -219,3 +260,4 @@
      }
 
      google.maps.event.addDomListener(window, 'load', initialize);
+

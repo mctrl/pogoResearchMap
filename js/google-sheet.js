@@ -20,6 +20,11 @@ function Pushbullet() {
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
+        $.notify("Getting Location please wait ...", {
+      position: "right middle",
+      style: "bootstrap",
+      className: 'warning',
+    });
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -42,7 +47,7 @@ function showPosition(position) {
     draggable: true,
     animation: google.maps.Animation.DROP,
     title: 'Your location',
-    icon: 'icons/pin.png'
+    icon: 'https://i.imgur.com/Dsi21Fi.png'
   });
   map.setCenter(thePosition);
   map.setZoom(17);
