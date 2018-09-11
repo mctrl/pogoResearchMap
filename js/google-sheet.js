@@ -19,18 +19,33 @@ function Pushbullet() {
 
 function getLocation() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-        $.notify("Getting Location please wait ...", {
+    //     navigator.geolocation.clearWatch(thegeolocation);
+    navigator.geolocation.getCurrentPosition(showPosition,function(){
+      
+                   $.notify("Geolocation not available on this device", {
+               position: "top middle",
+               style: "bootstrap",
+               className: 'error',
+             });
+    });
+
+  } else {
+
+    $.notify("You do not have working GPS please do not submit a stop", {
       position: "right middle",
       style: "bootstrap",
-      className: 'warning',
+      className: 'error',
     });
-  } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
 function showPosition(position) {
+      $.notify("Getting Location please wait ...", {
+      position: "right middle",
+      style: "bootstrap",
+      className: 'warning',
+    });
+  
   var marker = null;
   for (i = 0; i < gmarkers.length; i++) {
     gmarkers[i].setMap(null);
@@ -80,7 +95,8 @@ $(".hideshow").on("click", function() {
 $("#foo").submit(function(event) {
   event.preventDefault();
   var research_task = document.getElementById("Research Task").value;
-  
+  var hiddenValue = document.getElementById("location").value;
+
   if (research_task == "All") {
 
     $.notify("Please Choose a Task from the List", {
@@ -88,8 +104,27 @@ $("#foo").submit(function(event) {
       style: "bootstrap",
       className: 'error',
     });
+    
+    if (hiddenValue === null || hiddenValue === '') {
+    
+      $.notify("Your location data is not working", {
+      position: "right middle",
+      style: "bootstrap",
+      className: 'error',
+    });
+    
+  }
+    
+  }  else if (hiddenValue === null || hiddenValue === '') {
+    
+      $.notify("Your location data is not working", {
+      position: "right middle",
+      style: "bootstrap",
+      className: 'error',
+    });
+    
   } else {
-  
+
 
     // Abort any pending request
     if (request) {
@@ -133,13 +168,13 @@ $("#foo").submit(function(event) {
         style: "bootstrap",
         className: 'success'
       });
-      
-          var Research_task_selector = document.getElementById("Research Task");
 
-    var reward = document.getElementById("Reward");
-    reward.value = Research_task_selector.options[Research_task_selector.selectedIndex].dataset.reward;
+      var Research_task_selector = document.getElementById("Research Task");
 
-            Pushbullet();
+      var reward = document.getElementById("Reward");
+      reward.value = Research_task_selector.options[Research_task_selector.selectedIndex].dataset.reward;
+
+      Pushbullet();
 
 
     });

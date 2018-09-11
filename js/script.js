@@ -1,5 +1,7 @@
      var map = null;
-      
+     var thegeolocation;
+     var currentPosMarker;
+
      function initialize() {
 
        var defaultCenter = new google.maps.LatLng(52.92219, -1.47751);
@@ -8,6 +10,7 @@
        var locationColumn = 'location';
        var geocoder = new google.maps.Geocoder();
        var centered = 0;
+
 
        map = new google.maps.Map(document.getElementById('map-canvas'), {
          center: defaultCenter,
@@ -19,14 +22,17 @@
          zoomControl: false,
          mapTypeControl: false,
        });
-       
+
        if (navigator.geolocation) {
          navigator.geolocation.getCurrentPosition(function(position) {
+                     
            var pos = {
              lat: position.coords.latitude,
              lng: position.coords.longitude
            };
-           var currentPosMarker = new google.maps.Marker({
+           
+   
+           currentPosMarker = new google.maps.Marker({
              position: pos,
              animation: google.maps.Animation.DROP,
              map: map,
@@ -35,16 +41,13 @@
            if (centered === 0) {
              map.setCenter(pos);
 
-             navigator.geolocation.watchPosition(function(position) {
+             thegeolocation = navigator.geolocation.watchPosition(function(position) {
                var pos1 = {
                  lat: position.coords.latitude,
                  lng: position.coords.longitude
                };
 
                currentPosMarker.setPosition(pos1);
-
-
-
 
              });
 
@@ -56,10 +59,20 @@
            }
 
 
+         }, function(){
+           
+
+             $.notify("Geolocation not available on this device", {
+               position: "top middle",
+               style: "bootstrap",
+               className: 'error',
+             });
+             
+           
          });
        } else {
-         alert('Geolocation is not supported for this Browser/OS.');
-       } 
+
+       }
 
 
        var layer = new google.maps.FusionTablesLayer({
@@ -110,7 +123,7 @@
            for (var i in rows) {
              var store = rows[i][0];
              var reward = rows[i][1];
-//              console.log(reward);
+             //              console.log(reward);
 
              var storeElement = document.createElement('option');
              var TaskSubmitInner = document.createElement('option');
@@ -260,4 +273,3 @@
      }
 
      google.maps.event.addDomListener(window, 'load', initialize);
-
